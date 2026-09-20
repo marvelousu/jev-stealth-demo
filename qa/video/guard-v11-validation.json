@@ -1,0 +1,204 @@
+{
+  "checks": {
+    "intro_stays_at_zero": true,
+    "no_fast_forward": true,
+    "both_runs_start_at_zero": true,
+    "both_runs_reach_terminal": true,
+    "split_after_both_runs": true,
+    "same_fixed_split_crop": true,
+    "correct_initial_positions": true,
+    "no_video_frame_gaps": true,
+    "split_includes_all_key_actors": true
+  },
+  "duration": 82.25,
+  "source": "guard-v10-release/recording.json",
+  "initial": {
+    "guards": [
+      {
+        "face": [
+          -0.70710676908493,
+          0.70710676908493
+        ],
+        "id": "A",
+        "pos": [
+          -7.0,
+          4.0
+        ]
+      },
+      {
+        "face": [
+          -1.0,
+          0.0
+        ],
+        "id": "B",
+        "pos": [
+          6.0,
+          6.0
+        ]
+      },
+      {
+        "face": [
+          0.0,
+          1.0
+        ],
+        "id": "C",
+        "pos": [
+          10.0,
+          -3.0
+        ]
+      }
+    ],
+    "player": [
+      -11.0,
+      8.0
+    ],
+    "time": 0.0
+  },
+  "segments": [
+    {
+      "kind": "intro",
+      "duration": 3.5,
+      "begin": 0,
+      "end": 3.5,
+      "mode": "rules",
+      "start": 0,
+      "speed": 0
+    },
+    {
+      "kind": "play",
+      "duration": 14.4,
+      "begin": 3.5,
+      "end": 17.9,
+      "mode": "rules",
+      "start": 0,
+      "speed": 0.75
+    },
+    {
+      "kind": "play",
+      "duration": 7.399999999999999,
+      "begin": 17.9,
+      "end": 25.299999999999997,
+      "mode": "rules",
+      "start": 10.8,
+      "speed": 0.5
+    },
+    {
+      "kind": "play",
+      "duration": 4.733333333333732,
+      "begin": 25.299999999999997,
+      "end": 30.03333333333373,
+      "mode": "rules",
+      "start": 14.5,
+      "speed": 0.75
+    },
+    {
+      "kind": "result",
+      "duration": 2,
+      "begin": 30.03333333333373,
+      "end": 32.03333333333373,
+      "mode": "rules",
+      "start": 18.0500000000003,
+      "speed": 0
+    },
+    {
+      "kind": "divider",
+      "duration": 2,
+      "begin": 32.03333333333373,
+      "end": 34.03333333333373,
+      "mode": null,
+      "start": 0,
+      "speed": 0
+    },
+    {
+      "kind": "intro",
+      "duration": 3.5,
+      "begin": 34.03333333333373,
+      "end": 37.53333333333373,
+      "mode": "jev",
+      "start": 0,
+      "speed": 0
+    },
+    {
+      "kind": "play",
+      "duration": 14.4,
+      "begin": 37.53333333333373,
+      "end": 51.93333333333373,
+      "mode": "jev",
+      "start": 0,
+      "speed": 0.75
+    },
+    {
+      "kind": "play",
+      "duration": 7.399999999999999,
+      "begin": 51.933333333333735,
+      "end": 59.333333333333734,
+      "mode": "jev",
+      "start": 10.8,
+      "speed": 0.5
+    },
+    {
+      "kind": "play",
+      "duration": 2.5111111111115982,
+      "begin": 59.33333333333373,
+      "end": 61.84444444444532,
+      "mode": "jev",
+      "start": 14.5,
+      "speed": 0.75
+    },
+    {
+      "kind": "result",
+      "duration": 2,
+      "begin": 61.84444444444533,
+      "end": 63.84444444444533,
+      "mode": "jev",
+      "start": 16.3833333333337,
+      "speed": 0
+    },
+    {
+      "kind": "split_intro",
+      "duration": 2,
+      "begin": 63.84444444444533,
+      "end": 65.84444444444533,
+      "mode": null,
+      "start": 10.8,
+      "speed": 0
+    },
+    {
+      "kind": "split_move",
+      "duration": 7.399999999999999,
+      "begin": 65.84444444444532,
+      "end": 73.24444444444532,
+      "mode": null,
+      "start": 10.8,
+      "speed": 0.5
+    },
+    {
+      "kind": "split_hold",
+      "duration": 3,
+      "begin": 73.24444444444532,
+      "end": 76.24444444444532,
+      "mode": null,
+      "start": 14.5,
+      "speed": 0
+    },
+    {
+      "kind": "split_contact",
+      "duration": 2,
+      "begin": 76.24444444444532,
+      "end": 78.24444444444532,
+      "mode": null,
+      "start": 14.5,
+      "speed": 0.5
+    },
+    {
+      "kind": "split_end",
+      "duration": 4,
+      "begin": 78.24444444444532,
+      "end": 82.24444444444532,
+      "mode": null,
+      "start": 15.5,
+      "speed": 0
+    }
+  ],
+  "sha256": "fefa0e9f9d3f2cc37ee67bce1c09b0ba71928f07fa686dc33cc558574bd0690b"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "relay-jev-demo-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Narrow hosted Jev decision service for the Relay stealth demo.",
+  "type": "module",
+  "scripts": {
+    "types": "wrangler types worker-configuration.d.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run types && npm run typecheck && npm run test",
+    "dry-run": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.22.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11",
+    "wrangler": "4.135.0"
+  },
+  "overrides": {
+    "@cloudflare/vitest-pool-workers": {
+      "wrangler": "$wrangler",
+      "miniflare": "5.20260918.0-alpha"
+    }
+  },
+  "license": "MIT"
+}

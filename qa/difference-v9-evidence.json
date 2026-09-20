@@ -1,0 +1,92 @@
+{
+  "source": "qa/video/difference-v9/recording.json",
+  "same_first_three_observations": true,
+  "rules": {
+    "success": true,
+    "duration": 26.3666666666665,
+    "damage_equivalent": 0.0
+  },
+  "jev": {
+    "success": false,
+    "duration": 48.0166666666652,
+    "damage_equivalent": 2278.0
+  },
+  "decisions": {
+    "rules": [
+      {
+        "time": 1.53333333333333,
+        "trigger": "noise",
+        "choice": "inspect",
+        "baseline": "inspect",
+        "latency_ms": 0,
+        "source": "ルール"
+      },
+      {
+        "time": 11.0333333333335,
+        "trigger": "report",
+        "choice": "paired_inspection",
+        "baseline": "paired_inspection",
+        "latency_ms": 0,
+        "source": "ルール"
+      },
+      {
+        "time": 17.5333333333336,
+        "trigger": "noise",
+        "choice": "paired_inspection",
+        "baseline": "paired_inspection",
+        "latency_ms": 0,
+        "source": "ルール"
+      }
+    ],
+    "jev": [
+      {
+        "time": 1.53333333333333,
+        "trigger": "noise",
+        "choice": "inspect",
+        "baseline": "inspect",
+        "latency_ms": 1172,
+        "source": "Jev"
+      },
+      {
+        "time": 11.0333333333335,
+        "trigger": "report",
+        "choice": "paired_inspection",
+        "baseline": "paired_inspection",
+        "latency_ms": 619,
+        "source": "Jev"
+      },
+      {
+        "time": 17.5333333333336,
+        "trigger": "noise",
+        "choice": "counter_watch",
+        "baseline": "paired_inspection",
+        "latency_ms": 1000,
+        "source": "Jev"
+      },
+      {
+        "time": 24.3833333333332,
+        "trigger": "contact",
+        "choice": "flank_and_cover",
+        "baseline": "flank_and_cover",
+        "latency_ms": 1249,
+        "source": "Jev"
+      },
+      {
+        "time": 34.416666666666,
+        "trigger": "contact",
+        "choice": "flank_and_cover",
+        "baseline": "flank_and_cover",
+        "latency_ms": 641,
+        "source": "Jev"
+      },
+      {
+        "time": 44.4499999999988,
+        "trigger": "contact",
+        "choice": "flank_and_cover",
+        "baseline": "flank_and_cover",
+        "latency_ms": 538,
+        "source": "Jev"
+      }
+    ]
+  }
+}

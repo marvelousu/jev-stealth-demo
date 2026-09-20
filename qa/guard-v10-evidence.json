@@ -1,0 +1,2060 @@
+{
+  "version": "v0.1.4",
+  "scenario": "loop",
+  "ordinary_damage": true,
+  "invulnerable": false,
+  "shared_baseline_observations_match_through_first_4_decisions": true,
+  "passes": [
+    {
+      "damage_equivalent": 102.0,
+      "decisions": [
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "investigate",
+              "target": "(-10.0, 0.0)"
+            },
+            {
+              "id": "B",
+              "place": "東の中庭",
+              "role": "patrol",
+              "target": "(6.0, 6.0)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "inspect",
+          "baseline_forecast_text": "A→西・機動 約1秒\nB→東・機動 約0秒\nC→東・守備 約1秒",
+          "candidates": [
+            "inspect",
+            "paired_inspection",
+            "hold_position"
+          ],
+          "choice": "inspect",
+          "evidence_text": "0秒前・西：物音",
+          "forecast_text": "A→西・機動 約1秒\nB→東・機動 約0秒\nC→東・守備 約1秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "Current event: noise at west courtyard. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A investigate at west courtyard; B patrol at east courtyard; C patrol at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 0.0166666666666667,
+          "trigger": "noise"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "出口A",
+              "role": "pursue",
+              "target": "(-8.0, 8.0)"
+            },
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "flank",
+              "target": "(-11.0, 6.5)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "flank_and_cover",
+          "baseline_forecast_text": "A→西・機動 約2秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "candidates": [
+            "flank_and_cover",
+            "contain_exits",
+            "hold_position"
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "0秒前・西：物音\n0秒前・西：侵入者を目撃",
+          "forecast_text": "A→西・機動 約2秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "0s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "Current event: contact at southwest service gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A pursue at west courtyard; B search at east courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: true. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 0.666666666666667,
+          "trigger": "contact"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "出口A",
+              "role": "search",
+              "target": "(-5.5, 8.0)"
+            },
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "search",
+              "target": "(-3.5, 8.0)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "sweep_last_known",
+          "baseline_forecast_text": "A→西・機動 約0秒\nB→西・機動 約1秒\nC→東・守備 約0秒",
+          "candidates": [
+            "sweep_last_known",
+            "contain_exits",
+            "hold_position"
+          ],
+          "choice": "sweep_last_known",
+          "evidence_text": "4秒前・西：物音\n3秒前・西：侵入者を目撃\n0秒前・西：視界を失う",
+          "forecast_text": "A→西・機動 約0秒\nB→西・機動 約1秒\nC→東・守備 約0秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "4s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "3s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "0s ago: Lost visual contact at southwest service gate; only the last observed position is known",
+              "id": "history2"
+            },
+            {
+              "fact": "Current event: lost_contact at southwest service gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A search at southwest service gate; B flank at west courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 4.04999999999999,
+          "trigger": "lost_contact"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "support",
+              "target": "(-4.0, -1.5)"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "wait_cover",
+              "target": "(-3.5, -3.0)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "paired_inspection",
+          "baseline_forecast_text": "A→西・機動 約4秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "candidates": [
+            "inspect",
+            "paired_inspection",
+            "hold_position",
+            "counter_watch"
+          ],
+          "choice": "paired_inspection",
+          "evidence_text": "5秒前・東：侵入者を目撃\n3秒前・東：銃声の報告\n0秒前・西：物音",
+          "forecast_text": "A→西・機動 約4秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "10s ago: Received A report: disturbance at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "10s ago: Received guard A report of an intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "5s ago: Received guard C report of an intruder at east courtyard",
+              "id": "history2"
+            },
+            {
+              "fact": "3s ago: Received A report of gunfire at east courtyard",
+              "id": "history3"
+            },
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history4"
+            },
+            {
+              "fact": "Current event: noise at west courtyard. Observer B. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A search at east courtyard; B search at east courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "B",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 11.0000000000001,
+          "trigger": "noise"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "support",
+              "target": "(-6.5, 0.0)"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "wait_cover",
+              "target": "(-7.0, -1.5)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "paired_inspection",
+          "baseline_forecast_text": "A→西・機動 約1秒\nB→西・機動 約1秒\nC→東・守備 約2秒",
+          "candidates": [
+            "inspect",
+            "paired_inspection",
+            "hold_position",
+            "counter_watch"
+          ],
+          "choice": "paired_inspection",
+          "evidence_text": "9秒前・東：銃声の報告\n5秒前・西：物音\n0秒前・西：物音",
+          "forecast_text": "A→西・機動 約1秒\nB→西・機動 約1秒\nC→東・守備 約2秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "16s ago: Received A report: disturbance at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "15s ago: Received guard A report of an intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "10s ago: Received guard C report of an intruder at east courtyard",
+              "id": "history2"
+            },
+            {
+              "fact": "9s ago: Received A report of gunfire at east courtyard",
+              "id": "history3"
+            },
+            {
+              "fact": "5s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history4"
+            },
+            {
+              "fact": "0s ago: Heard the same short electronic chirp repeat at west courtyard",
+              "id": "history5"
+            },
+            {
+              "fact": "Current event: noise at west courtyard. Observer B. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A support at west courtyard; B investigate at west courtyard; C patrol at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "B",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 16.016666666667,
+          "trigger": "noise"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            },
+            {
+              "id": "B",
+              "place": "出口B",
+              "role": "flank",
+              "target": "(11.0, 6.5)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "pursue",
+              "target": "(12.0, 0.5)"
+            }
+          ],
+          "baseline": "flank_and_cover",
+          "baseline_forecast_text": "A→東・守備 約10秒\nB→東・機動 約6秒\nC→東・機動 約1秒",
+          "candidates": [
+            "flank_and_cover",
+            "contain_exits",
+            "hold_position"
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "5秒前・西：物音\n0秒前・西：物音\n0秒前・東：侵入者を目撃",
+          "forecast_text": "A→東・守備 約10秒\nB→東・機動 約6秒\nC→東・機動 約1秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "16s ago: Received A report: disturbance at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "16s ago: Received guard A report of an intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "11s ago: Saw an armed intruder at east courtyard",
+              "id": "history2"
+            },
+            {
+              "fact": "9s ago: Received A report of gunfire at east courtyard",
+              "id": "history3"
+            },
+            {
+              "fact": "5s ago: Received B report: disturbance at west courtyard",
+              "id": "history4"
+            },
+            {
+              "fact": "0s ago: Received B report: disturbance at west courtyard",
+              "id": "history5"
+            },
+            {
+              "fact": "0s ago: Saw an armed intruder at east courtyard",
+              "id": "history6"
+            },
+            {
+              "fact": "Current event: contact at east courtyard. Observer C. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A support at west courtyard; B search at west courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: true. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "C",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 16.766666666667,
+          "trigger": "contact"
+        }
+      ],
+      "detections": 3,
+      "duration": 18.0500000000003,
+      "guards": [
+        {
+          "id": "A",
+          "observations": [
+            {
+              "fact": "Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 0.0166666666666667
+            },
+            {
+              "fact": "Saw an armed intruder at southwest service gate",
+              "kind": "contact",
+              "point": "(-8.200012, 8.0)",
+              "time": 0.666666666666667
+            },
+            {
+              "fact": "Lost visual contact at southwest service gate; only the last observed position is known",
+              "kind": "lost_contact",
+              "point": "(-4.560004, 8.0)",
+              "time": 4.04999999999999
+            },
+            {
+              "fact": "Received guard C report of an intruder at east courtyard",
+              "kind": "contact",
+              "point": "(6.0, 1.621545)",
+              "time": 5.21666666666665
+            },
+            {
+              "fact": "Heard gunfire at east courtyard",
+              "kind": "gunfire",
+              "point": "(3.004502, -2.99994)",
+              "time": 7.01666666666665
+            },
+            {
+              "fact": "Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "kind": "noise",
+              "point": "(-4.5, -2.0)",
+              "time": 11.0000000000001
+            },
+            {
+              "fact": "Heard the same short electronic chirp repeat at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 16.016666666667
+            },
+            {
+              "fact": "Received guard C report of an intruder at east courtyard",
+              "kind": "contact",
+              "point": "(12.0, 0.618046)",
+              "time": 16.766666666667
+            }
+          ],
+          "position": [
+            -4.24303388595581,
+            -1.81983041763306
+          ],
+          "role": "sentry",
+          "target": [
+            10.0,
+            -2.0
+          ]
+        },
+        {
+          "id": "B",
+          "observations": [
+            {
+              "fact": "Received A report: disturbance at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 0.0166666666666667
+            },
+            {
+              "fact": "Received guard A report of an intruder at southwest service gate",
+              "kind": "contact",
+              "point": "(-8.200012, 8.0)",
+              "time": 0.666666666666667
+            },
+            {
+              "fact": "Received guard C report of an intruder at east courtyard",
+              "kind": "contact",
+              "point": "(6.0, 1.621545)",
+              "time": 5.21666666666665
+            },
+            {
+              "fact": "Received A report of gunfire at east courtyard",
+              "kind": "gunfire",
+              "point": "(3.004502, -2.99994)",
+              "time": 7.01666666666665
+            },
+            {
+              "fact": "Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "kind": "noise",
+              "point": "(-4.5, -2.0)",
+              "time": 11.0000000000001
+            },
+            {
+              "fact": "Heard the same short electronic chirp repeat at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 16.016666666667
+            },
+            {
+              "fact": "Received guard C report of an intruder at east courtyard",
+              "kind": "contact",
+              "point": "(12.0, 0.618046)",
+              "time": 16.766666666667
+            }
+          ],
+          "position": [
+            -4.64899444580078,
+            2.58459377288818
+          ],
+          "role": "flank",
+          "target": [
+            11.0,
+            4.5
+          ]
+        },
+        {
+          "id": "C",
+          "observations": [
+            {
+              "fact": "Received A report: disturbance at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 0.0166666666666667
+            },
+            {
+              "fact": "Received guard A report of an intruder at southwest service gate",
+              "kind": "contact",
+              "point": "(-8.200012, 8.0)",
+              "time": 0.666666666666667
+            },
+            {
+              "fact": "Saw an armed intruder at east courtyard",
+              "kind": "contact",
+              "point": "(6.0, 1.621545)",
+              "time": 5.21666666666665
+            },
+            {
+              "fact": "Received A report of gunfire at east courtyard",
+              "kind": "gunfire",
+              "point": "(3.004502, -2.99994)",
+              "time": 7.01666666666665
+            },
+            {
+              "fact": "Received B report: disturbance at west courtyard",
+              "kind": "noise",
+              "point": "(-4.5, -2.0)",
+              "time": 11.0000000000001
+            },
+            {
+              "fact": "Received B report: disturbance at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 16.016666666667
+            },
+            {
+              "fact": "Saw an armed intruder at east courtyard",
+              "kind": "contact",
+              "point": "(12.0, 0.618046)",
+              "time": 16.766666666667
+            }
+          ],
+          "position": [
+            11.4270191192627,
+            -2.03351402282715
+          ],
+          "role": "pursue",
+          "target": [
+            10.5157136917114,
+            -4.24195194244385
+          ]
+        }
+      ],
+      "has_case": false,
+      "hp": 0.0,
+      "mode": "rules",
+      "objective_events": [
+        {
+          "kind": "noise",
+          "text": "反復物音を設置",
+          "time": 0.0166666666666667
+        },
+        {
+          "baseline": "inspect",
+          "changes": [
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "警戒を維持"
+            }
+          ],
+          "choice": "inspect",
+          "evidence_text": "0秒前・西：物音",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：一人で確認／C 警戒を維持・東の中庭",
+          "time": 0.0166666666666667
+        },
+        {
+          "guard": "A",
+          "kind": "contact",
+          "text": "Aに発見された（出口A）",
+          "time": 0.666666666666667
+        },
+        {
+          "baseline": "flank_and_cover",
+          "changes": [
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "回り込む"
+            }
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "0秒前・西：物音\n0秒前・西：侵入者を目撃",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：追跡・側面・援護／B 回り込む・出口A",
+          "time": 0.666666666666667
+        },
+        {
+          "damage": 34.0,
+          "guard": "A",
+          "kind": "hit",
+          "text": "Aから被弾（耐久66）",
+          "time": 1.3
+        },
+        {
+          "kind": "smoke",
+          "text": "煙幕を使用（残り1）",
+          "time": 1.41666666666667
+        },
+        {
+          "baseline": "sweep_last_known",
+          "changes": [
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "最終目撃を捜索"
+            }
+          ],
+          "choice": "sweep_last_known",
+          "evidence_text": "4秒前・西：物音\n3秒前・西：侵入者を目撃\n0秒前・西：視界を失う",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：最後に見た場所を捜索／B 最終目撃を捜索・出口A",
+          "time": 4.04999999999999
+        },
+        {
+          "kind": "smoke",
+          "text": "煙幕を使用（残り0）",
+          "time": 5.21666666666665
+        },
+        {
+          "guard": "C",
+          "kind": "contact",
+          "text": "Cに発見された（東の中庭）",
+          "time": 5.21666666666665
+        },
+        {
+          "aim": [
+            14.0,
+            8.0
+          ],
+          "kind": "shot",
+          "position": [
+            3.00450205802917,
+            -2.99994039535522
+          ],
+          "text": "プレイヤーが発砲",
+          "time": 7.01666666666665
+        },
+        {
+          "kind": "noise",
+          "text": "反復物音を設置",
+          "time": 11.0000000000001
+        },
+        {
+          "baseline": "paired_inspection",
+          "changes": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "援護"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "援護待ち"
+            }
+          ],
+          "choice": "paired_inspection",
+          "evidence_text": "5秒前・東：侵入者を目撃\n3秒前・東：銃声の報告\n0秒前・西：物音",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：確認役と援護役／A 援護・西の中庭 / B 援護待ち・西の中庭",
+          "time": 11.0000000000001
+        },
+        {
+          "baseline": "paired_inspection",
+          "changes": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "援護"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "援護待ち"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "警戒を維持"
+            }
+          ],
+          "choice": "paired_inspection",
+          "evidence_text": "9秒前・東：銃声の報告\n5秒前・西：物音\n0秒前・西：物音",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：確認役と援護役／A 援護・西の中庭 / B 援護待ち・西の中庭",
+          "time": 16.016666666667
+        },
+        {
+          "guard": "C",
+          "kind": "contact",
+          "text": "Cに発見された（東の中庭）",
+          "time": 16.766666666667
+        },
+        {
+          "baseline": "flank_and_cover",
+          "changes": [
+            {
+              "id": "A",
+              "place": "東の中庭",
+              "role": "警戒を維持"
+            },
+            {
+              "id": "B",
+              "place": "出口B",
+              "role": "回り込む"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "追跡"
+            }
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "5秒前・西：物音\n0秒前・西：物音\n0秒前・東：侵入者を目撃",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：追跡・側面・援護／A 警戒を維持・東の中庭 / B 回り込む・出口B",
+          "time": 16.766666666667
+        },
+        {
+          "damage": 34.0,
+          "guard": "C",
+          "kind": "hit",
+          "text": "Cから被弾（耐久32）",
+          "time": 17.4000000000003
+        },
+        {
+          "damage": 34.0,
+          "guard": "C",
+          "kind": "hit",
+          "text": "Cから被弾（耐久0）",
+          "time": 18.0500000000003
+        }
+      ],
+      "objective_stage": 0,
+      "scenario": "loop",
+      "success": false
+    },
+    {
+      "damage_equivalent": 102.0,
+      "decisions": [
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "investigate",
+              "target": "(-10.0, 0.0)"
+            },
+            {
+              "id": "B",
+              "place": "東の中庭",
+              "role": "patrol",
+              "target": "(6.0, 6.0)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "inspect",
+          "baseline_forecast_text": "A→西・機動 約1秒\nB→東・機動 約0秒\nC→東・守備 約1秒",
+          "candidates": [
+            "inspect",
+            "paired_inspection",
+            "hold_position"
+          ],
+          "choice": "inspect",
+          "evidence_text": "0秒前・西：物音",
+          "forecast_text": "A→西・機動 約1秒\nB→東・機動 約0秒\nC→東・守備 約1秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "Current event: noise at west courtyard. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A investigate at west courtyard; B patrol at east courtyard; C patrol at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 0.0166666666666667,
+          "trigger": "noise"
+        },
+        {
+          "application_delay": 0.583333333333333,
+          "baseline": "inspect",
+          "baseline_forecast_text": "A→西・機動 約1秒\nB→東・機動 約0秒\nC→東・守備 約1秒",
+          "candidates": [
+            "inspect",
+            "paired_inspection",
+            "hold_position"
+          ],
+          "changed": false,
+          "choice": "inspect",
+          "comparison_wait": 0.0,
+          "diversion_probability": null,
+          "evidence_text": "0秒前・西：物音",
+          "forecast_text": "A→西・機動 約1秒\nB→東・機動 約0秒\nC→東・守備 約1秒",
+          "latency_ms": 678,
+          "observations": [
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "Current event: noise at west courtyard. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A investigate at west courtyard; B patrol at east courtyard; C patrol at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "assist",
+          "raw_choice": "inspect",
+          "source": "Jev",
+          "time": 0.6,
+          "trigger": "noise"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "出口A",
+              "role": "pursue",
+              "target": "(-8.0, 8.0)"
+            },
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "flank",
+              "target": "(-11.0, 6.5)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "flank_and_cover",
+          "baseline_forecast_text": "A→西・機動 約2秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "candidates": [
+            "flank_and_cover",
+            "contain_exits",
+            "hold_position"
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "0秒前・西：物音\n0秒前・西：侵入者を目撃",
+          "forecast_text": "A→西・機動 約2秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "0s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "Current event: contact at southwest service gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A pursue at west courtyard; B search at east courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: true. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 0.666666666666667,
+          "trigger": "contact"
+        },
+        {
+          "application_delay": 0.533333333333334,
+          "baseline": "flank_and_cover",
+          "baseline_forecast_text": "A→西・機動 約2秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "candidates": [
+            "flank_and_cover",
+            "contain_exits",
+            "hold_position"
+          ],
+          "changed": false,
+          "choice": "flank_and_cover",
+          "comparison_wait": 0.0,
+          "diversion_probability": null,
+          "evidence_text": "0秒前・西：物音\n0秒前・西：侵入者を目撃",
+          "forecast_text": "A→西・機動 約2秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "latency_ms": 616,
+          "observations": [
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "0s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "Current event: contact at southwest service gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A pursue at west courtyard; B search at east courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: true. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "assist",
+          "raw_choice": "flank_and_cover",
+          "source": "Jev",
+          "time": 1.2,
+          "trigger": "contact"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "出口A",
+              "role": "search",
+              "target": "(-5.5, 8.0)"
+            },
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "search",
+              "target": "(-3.5, 8.0)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "sweep_last_known",
+          "baseline_forecast_text": "A→西・機動 約0秒\nB→西・機動 約1秒\nC→東・守備 約0秒",
+          "candidates": [
+            "sweep_last_known",
+            "contain_exits",
+            "hold_position"
+          ],
+          "choice": "sweep_last_known",
+          "evidence_text": "4秒前・西：物音\n3秒前・西：侵入者を目撃\n0秒前・西：視界を失う",
+          "forecast_text": "A→西・機動 約0秒\nB→西・機動 約1秒\nC→東・守備 約0秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "4s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "3s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "0s ago: Lost visual contact at southwest service gate; only the last observed position is known",
+              "id": "history2"
+            },
+            {
+              "fact": "Current event: lost_contact at southwest service gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A search at southwest service gate; B flank at west courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 4.04999999999999,
+          "trigger": "lost_contact"
+        },
+        {
+          "application_delay": 0.483333333333332,
+          "baseline": "sweep_last_known",
+          "baseline_forecast_text": "A→西・機動 約0秒\nB→西・機動 約1秒\nC→東・守備 約0秒",
+          "candidates": [
+            "sweep_last_known",
+            "contain_exits",
+            "hold_position"
+          ],
+          "changed": false,
+          "choice": "sweep_last_known",
+          "comparison_wait": 0.0,
+          "diversion_probability": null,
+          "evidence_text": "4秒前・西：物音\n3秒前・西：侵入者を目撃\n0秒前・西：視界を失う",
+          "forecast_text": "A→西・機動 約0秒\nB→西・機動 約1秒\nC→東・守備 約0秒",
+          "latency_ms": 541,
+          "observations": [
+            {
+              "fact": "4s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "3s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "0s ago: Lost visual contact at southwest service gate; only the last observed position is known",
+              "id": "history2"
+            },
+            {
+              "fact": "Current event: lost_contact at southwest service gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A search at southwest service gate; B flank at west courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "assist",
+          "raw_choice": "sweep_last_known",
+          "source": "Jev",
+          "time": 4.53333333333332,
+          "trigger": "lost_contact"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "support",
+              "target": "(-4.0, -1.5)"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "wait_cover",
+              "target": "(-3.5, -3.0)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "paired_inspection",
+          "baseline_forecast_text": "A→西・機動 約4秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "candidates": [
+            "inspect",
+            "paired_inspection",
+            "hold_position",
+            "counter_watch"
+          ],
+          "choice": "paired_inspection",
+          "evidence_text": "5秒前・東：侵入者を目撃\n3秒前・東：銃声の報告\n0秒前・西：物音",
+          "forecast_text": "A→西・機動 約4秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "10s ago: Received A report: disturbance at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "10s ago: Received guard A report of an intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "5s ago: Received guard C report of an intruder at east courtyard",
+              "id": "history2"
+            },
+            {
+              "fact": "3s ago: Received A report of gunfire at east courtyard",
+              "id": "history3"
+            },
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history4"
+            },
+            {
+              "fact": "Current event: noise at west courtyard. Observer B. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A search at east courtyard; B search at east courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "B",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 11.0000000000001,
+          "trigger": "noise"
+        },
+        {
+          "application_delay": 0.516666666666692,
+          "assignments": [
+            {
+              "id": "A",
+              "place": "東の中庭",
+              "role": "ambush",
+              "target": "(7.0, 2.0)"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "watch",
+              "target": "(-2.5, -3.0)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "paired_inspection",
+          "baseline_forecast_text": "A→西・機動 約4秒\nB→西・機動 約4秒\nC→東・守備 約0秒",
+          "candidates": [
+            "inspect",
+            "paired_inspection",
+            "hold_position",
+            "counter_watch"
+          ],
+          "changed": true,
+          "choice": "counter_watch",
+          "comparison_wait": 0.0,
+          "diversion_probability": 0.79,
+          "evidence_text": "5秒前・東：侵入者を目撃\n3秒前・東：銃声の報告\n0秒前・西：物音",
+          "forecast_text": "A→東・機動 約0秒\nB→西・機動 約7秒\nC→東・守備 約0秒",
+          "latency_ms": 571,
+          "observations": [
+            {
+              "fact": "10s ago: Received A report: disturbance at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "10s ago: Received guard A report of an intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "5s ago: Received guard C report of an intruder at east courtyard",
+              "id": "history2"
+            },
+            {
+              "fact": "3s ago: Received A report of gunfire at east courtyard",
+              "id": "history3"
+            },
+            {
+              "fact": "0s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history4"
+            },
+            {
+              "fact": "Current event: noise at west courtyard. Observer B. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A search at east courtyard; B search at east courtyard; C sentry at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: false. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "B",
+          "phase": "assist",
+          "raw_choice": "counter_watch",
+          "source": "Jev",
+          "time": 11.5166666666668,
+          "trigger": "noise"
+        },
+        {
+          "assignments": [
+            {
+              "id": "A",
+              "place": "出口B",
+              "role": "pursue",
+              "target": "(11.5, 7.0)"
+            },
+            {
+              "id": "B",
+              "place": "出口B",
+              "role": "flank",
+              "target": "(11.0, 6.5)"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "sentry",
+              "target": "(10.0, -2.0)"
+            }
+          ],
+          "baseline": "flank_and_cover",
+          "baseline_forecast_text": "A→東・機動 約2秒\nB→東・機動 約4秒\nC→東・守備 約1秒",
+          "candidates": [
+            "flank_and_cover",
+            "contain_exits",
+            "hold_position"
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "8秒前・東：銃声の報告\n4秒前・西：物音\n0秒前・東：侵入者を目撃",
+          "forecast_text": "A→東・機動 約2秒\nB→東・機動 約4秒\nC→東・守備 約1秒",
+          "latency_ms": 0,
+          "observations": [
+            {
+              "fact": "15s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "14s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "11s ago: Lost visual contact at southwest service gate; only the last observed position is known",
+              "id": "history2"
+            },
+            {
+              "fact": "9s ago: Received guard C report of an intruder at east courtyard",
+              "id": "history3"
+            },
+            {
+              "fact": "8s ago: Heard gunfire at east courtyard",
+              "id": "history4"
+            },
+            {
+              "fact": "4s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history5"
+            },
+            {
+              "fact": "0s ago: Saw an armed intruder at southeast loading gate",
+              "id": "history6"
+            },
+            {
+              "fact": "Current event: contact at southeast loading gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A pursue at east courtyard; B watch at east courtyard; C search at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: true. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "baseline",
+          "source": "rules",
+          "time": 15.1000000000003,
+          "trigger": "contact"
+        },
+        {
+          "application_delay": 0.566666666666695,
+          "baseline": "flank_and_cover",
+          "baseline_forecast_text": "A→東・機動 約2秒\nB→東・機動 約4秒\nC→東・守備 約1秒",
+          "candidates": [
+            "flank_and_cover",
+            "contain_exits",
+            "hold_position"
+          ],
+          "changed": false,
+          "choice": "flank_and_cover",
+          "comparison_wait": 0.0,
+          "diversion_probability": null,
+          "evidence_text": "8秒前・東：銃声の報告\n4秒前・西：物音\n0秒前・東：侵入者を目撃",
+          "forecast_text": "A→東・機動 約2秒\nB→東・機動 約4秒\nC→東・守備 約1秒",
+          "latency_ms": 791,
+          "observations": [
+            {
+              "fact": "15s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history0"
+            },
+            {
+              "fact": "14s ago: Saw an armed intruder at southwest service gate",
+              "id": "history1"
+            },
+            {
+              "fact": "11s ago: Lost visual contact at southwest service gate; only the last observed position is known",
+              "id": "history2"
+            },
+            {
+              "fact": "9s ago: Received guard C report of an intruder at east courtyard",
+              "id": "history3"
+            },
+            {
+              "fact": "8s ago: Heard gunfire at east courtyard",
+              "id": "history4"
+            },
+            {
+              "fact": "4s ago: Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "id": "history5"
+            },
+            {
+              "fact": "0s ago: Saw an armed intruder at southeast loading gate",
+              "id": "history6"
+            },
+            {
+              "fact": "Current event: contact at southeast loading gate. Observer A. No unseen intruder location is known.",
+              "id": "context-event"
+            },
+            {
+              "fact": "Responding guards: 3. Current reported posts: A pursue at east courtyard; B watch at east courtyard; C search at east courtyard",
+              "id": "context-squad"
+            },
+            {
+              "fact": "Direct visual contact now: true. Empty sound inspections by this guard: 0. Guard health: 100.",
+              "id": "context-contact"
+            },
+            {
+              "fact": "Case confirmed missing by a reporting guard: false. Keep a sentry on the objective or an escape route; other guards can maneuver.",
+              "id": "context-objective"
+            }
+          ],
+          "observer": "A",
+          "phase": "assist",
+          "raw_choice": "flank_and_cover",
+          "source": "Jev",
+          "time": 15.666666666667,
+          "trigger": "contact"
+        }
+      ],
+      "detections": 3,
+      "duration": 16.3833333333337,
+      "guards": [
+        {
+          "id": "A",
+          "observations": [
+            {
+              "fact": "Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 0.0166666666666667
+            },
+            {
+              "fact": "Saw an armed intruder at southwest service gate",
+              "kind": "contact",
+              "point": "(-8.200012, 8.0)",
+              "time": 0.666666666666667
+            },
+            {
+              "fact": "Lost visual contact at southwest service gate; only the last observed position is known",
+              "kind": "lost_contact",
+              "point": "(-4.560004, 8.0)",
+              "time": 4.04999999999999
+            },
+            {
+              "fact": "Received guard C report of an intruder at east courtyard",
+              "kind": "contact",
+              "point": "(6.0, 1.621545)",
+              "time": 5.21666666666665
+            },
+            {
+              "fact": "Heard gunfire at east courtyard",
+              "kind": "gunfire",
+              "point": "(3.004502, -2.99994)",
+              "time": 7.01666666666665
+            },
+            {
+              "fact": "Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "kind": "noise",
+              "point": "(-4.5, -2.0)",
+              "time": 11.0000000000001
+            },
+            {
+              "fact": "Saw an armed intruder at southeast loading gate",
+              "kind": "contact",
+              "point": "(11.28255, 6.836244)",
+              "time": 15.1000000000003
+            }
+          ],
+          "position": [
+            9.99755859375,
+            4.05707597732544
+          ],
+          "role": "pursue",
+          "target": [
+            11.9999980926514,
+            2.22804689407349
+          ]
+        },
+        {
+          "id": "B",
+          "observations": [
+            {
+              "fact": "Received A report: disturbance at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 0.0166666666666667
+            },
+            {
+              "fact": "Received guard A report of an intruder at southwest service gate",
+              "kind": "contact",
+              "point": "(-8.200012, 8.0)",
+              "time": 0.666666666666667
+            },
+            {
+              "fact": "Received guard C report of an intruder at east courtyard",
+              "kind": "contact",
+              "point": "(6.0, 1.621545)",
+              "time": 5.21666666666665
+            },
+            {
+              "fact": "Received A report of gunfire at east courtyard",
+              "kind": "gunfire",
+              "point": "(3.004502, -2.99994)",
+              "time": 7.01666666666665
+            },
+            {
+              "fact": "Heard a metallic impact followed by a short electronic chirp at west courtyard",
+              "kind": "noise",
+              "point": "(-4.5, -2.0)",
+              "time": 11.0000000000001
+            },
+            {
+              "fact": "Received guard A report of an intruder at southeast loading gate",
+              "kind": "contact",
+              "point": "(11.28255, 6.836244)",
+              "time": 15.1000000000003
+            }
+          ],
+          "position": [
+            5.33701992034912,
+            -1.62263214588165
+          ],
+          "role": "flank",
+          "target": [
+            11.0,
+            6.5
+          ]
+        },
+        {
+          "id": "C",
+          "observations": [
+            {
+              "fact": "Received A report: disturbance at west courtyard",
+              "kind": "noise",
+              "point": "(-10.0, 0.0)",
+              "time": 0.0166666666666667
+            },
+            {
+              "fact": "Received guard A report of an intruder at southwest service gate",
+              "kind": "contact",
+              "point": "(-8.200012, 8.0)",
+              "time": 0.666666666666667
+            },
+            {
+              "fact": "Saw an armed intruder at east courtyard",
+              "kind": "contact",
+              "point": "(6.0, 1.621545)",
+              "time": 5.21666666666665
+            },
+            {
+              "fact": "Received A report of gunfire at east courtyard",
+              "kind": "gunfire",
+              "point": "(3.004502, -2.99994)",
+              "time": 7.01666666666665
+            },
+            {
+              "fact": "Received B report: disturbance at west courtyard",
+              "kind": "noise",
+              "point": "(-4.5, -2.0)",
+              "time": 11.0000000000001
+            },
+            {
+              "fact": "Received guard A report of an intruder at southeast loading gate",
+              "kind": "contact",
+              "point": "(11.28255, 6.836244)",
+              "time": 15.1000000000003
+            }
+          ],
+          "position": [
+            9.49751949310303,
+            -1.82355451583862
+          ],
+          "role": "sentry",
+          "target": [
+            10.0,
+            -2.0
+          ]
+        }
+      ],
+      "has_case": false,
+      "hp": 0.0,
+      "mode": "jev",
+      "objective_events": [
+        {
+          "kind": "noise",
+          "text": "反復物音を設置",
+          "time": 0.0166666666666667
+        },
+        {
+          "baseline": "inspect",
+          "changes": [
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "警戒を維持"
+            }
+          ],
+          "choice": "inspect",
+          "evidence_text": "0秒前・西：物音",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：一人で確認／C 警戒を維持・東の中庭",
+          "time": 0.0166666666666667
+        },
+        {
+          "guard": "A",
+          "kind": "contact",
+          "text": "Aに発見された（出口A）",
+          "time": 0.666666666666667
+        },
+        {
+          "baseline": "flank_and_cover",
+          "changes": [
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "回り込む"
+            }
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "0秒前・西：物音\n0秒前・西：侵入者を目撃",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：追跡・側面・援護／B 回り込む・出口A",
+          "time": 0.666666666666667
+        },
+        {
+          "damage": 34.0,
+          "guard": "A",
+          "kind": "hit",
+          "text": "Aから被弾（耐久66）",
+          "time": 1.3
+        },
+        {
+          "kind": "smoke",
+          "text": "煙幕を使用（残り1）",
+          "time": 1.41666666666667
+        },
+        {
+          "baseline": "sweep_last_known",
+          "changes": [
+            {
+              "id": "B",
+              "place": "出口A",
+              "role": "最終目撃を捜索"
+            }
+          ],
+          "choice": "sweep_last_known",
+          "evidence_text": "4秒前・西：物音\n3秒前・西：侵入者を目撃\n0秒前・西：視界を失う",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：最後に見た場所を捜索／B 最終目撃を捜索・出口A",
+          "time": 4.04999999999999
+        },
+        {
+          "kind": "smoke",
+          "text": "煙幕を使用（残り0）",
+          "time": 5.21666666666665
+        },
+        {
+          "guard": "C",
+          "kind": "contact",
+          "text": "Cに発見された（東の中庭）",
+          "time": 5.21666666666665
+        },
+        {
+          "aim": [
+            14.0,
+            8.0
+          ],
+          "kind": "shot",
+          "position": [
+            3.00450205802917,
+            -2.99994039535522
+          ],
+          "text": "プレイヤーが発砲",
+          "time": 7.01666666666665
+        },
+        {
+          "kind": "noise",
+          "text": "反復物音を設置",
+          "time": 11.0000000000001
+        },
+        {
+          "baseline": "paired_inspection",
+          "changes": [
+            {
+              "id": "A",
+              "place": "西の中庭",
+              "role": "援護"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "援護待ち"
+            }
+          ],
+          "choice": "paired_inspection",
+          "evidence_text": "5秒前・東：侵入者を目撃\n3秒前・東：銃声の報告\n0秒前・西：物音",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：確認役と援護役／A 援護・西の中庭 / B 援護待ち・西の中庭",
+          "time": 11.0000000000001
+        },
+        {
+          "baseline": "paired_inspection",
+          "changes": [
+            {
+              "id": "A",
+              "place": "東の中庭",
+              "role": "別経路を待つ"
+            },
+            {
+              "id": "B",
+              "place": "西の中庭",
+              "role": "音源を監視"
+            }
+          ],
+          "choice": "counter_watch",
+          "evidence_text": "5秒前・東：侵入者を目撃\n3秒前・東：銃声の報告\n0秒前・西：物音",
+          "kind": "decision",
+          "source": "Jev",
+          "text": "Jev：囮を警戒・別経路へ先回り／A 別経路を待つ・東の中庭 / B 音源を監視・西の中庭",
+          "time": 11.5166666666668
+        },
+        {
+          "guard": "A",
+          "kind": "contact",
+          "text": "Aに発見された（出口B）",
+          "time": 15.1000000000003
+        },
+        {
+          "baseline": "flank_and_cover",
+          "changes": [
+            {
+              "id": "B",
+              "place": "出口B",
+              "role": "回り込む"
+            },
+            {
+              "id": "C",
+              "place": "東の中庭",
+              "role": "警戒を維持"
+            }
+          ],
+          "choice": "flank_and_cover",
+          "evidence_text": "8秒前・東：銃声の報告\n4秒前・西：物音\n0秒前・東：侵入者を目撃",
+          "kind": "decision",
+          "source": "ルール",
+          "text": "ルール：追跡・側面・援護／B 回り込む・出口B / C 警戒を維持・東の中庭",
+          "time": 15.1000000000003
+        },
+        {
+          "damage": 34.0,
+          "guard": "A",
+          "kind": "hit",
+          "text": "Aから被弾（耐久32）",
+          "time": 15.7333333333337
+        },
+        {
+          "damage": 34.0,
+          "guard": "A",
+          "kind": "hit",
+          "text": "Aから被弾（耐久0）",
+          "time": 16.3833333333337
+        }
+      ],
+      "objective_stage": 0,
+      "scenario": "loop",
+      "success": false
+    }
+  ],
+  "guards_at_14_seconds": {
+    "rules": {
+      "choice": "確認役と援護役",
+      "devices": [
+        [
+          -10.0,
+          0.0
+        ],
+        [
+          -4.5,
+          -2.0
+        ]
+      ],
+      "guards": [
+        {
+          "detect": 0.0,
+          "direct_seen_at": 1.53333333333333,
+          "face": [
+            -1.0,
+            -1.08652202470694e-05
+          ],
+          "fire": 0.0,
+          "hp": 100.0,
+          "id": "A",
+          "pos": [
+            -1.72948861122131,
+            -2.99999165534973
+          ],
+          "role": "support",
+          "seen_at": 5.21666666666665,
+          "target": [
+            -4.0,
+            -1.5
+          ]
+        },
+        {
+          "detect": 0.0,
+          "direct_seen_at": -100.0,
+          "face": [
+            -1.0,
+            -1.08162666947464e-05
+          ],
+          "fire": 0.0,
+          "hp": 100.0,
+          "id": "B",
+          "pos": [
+            -1.79184246063232,
+            -2.99999237060547
+          ],
+          "role": "wait_cover",
+          "seen_at": 5.21666666666665,
+          "target": [
+            -3.5,
+            -3.0
+          ]
+        },
+        {
+          "detect": 0.0108333333333333,
+          "direct_seen_at": 5.31666666666665,
+          "face": [
+            0.483075082302094,
+            0.875578939914703
+          ],
+          "fire": 0.0,
+          "hp": 100.0,
+          "id": "C",
+          "pos": [
+            10.0,
+            -2.52499866485596
+          ],
+          "role": "sentry",
+          "seen_at": 5.31666666666665,
+          "target": [
+            10.0,
+            -2.0
+          ]
+        }
+      ],
+      "has_case": false,
+      "interaction": 0.0,
+      "pending": false,
+      "player": [
+        7.36712503433228,
+        5.04109144210815
+      ],
+      "player_hp": 66.0,
+      "smokes": [],
+      "source": "ルール",
+      "stage": 0,
+      "time": 14.0166666666669
+    },
+    "jev": {
+      "choice": "囮を警戒・別経路へ先回り",
+      "devices": [
+        [
+          -10.0,
+          0.0
+        ],
+        [
+          -4.5,
+          -2.0
+        ]
+      ],
+      "guards": [
+        {
+          "detect": 0.0,
+          "direct_seen_at": 1.53333333333333,
+          "face": [
+            0.872364521026611,
+            -0.488855957984924
+          ],
+          "fire": 0.0,
+          "hp": 100.0,
+          "id": "A",
+          "pos": [
+            6.47527694702148,
+            1.86189877986908
+          ],
+          "role": "ambush",
+          "seen_at": 5.21666666666665,
+          "target": [
+            7.0,
+            2.0
+          ]
+        },
+        {
+          "detect": 0.0,
+          "direct_seen_at": -100.0,
+          "face": [
+            -0.997900307178497,
+            -0.0647693052887917
+          ],
+          "fire": 0.0,
+          "hp": 100.0,
+          "id": "B",
+          "pos": [
+            2.96736431121826,
+            -2.96966552734375
+          ],
+          "role": "watch",
+          "seen_at": 5.21666666666665,
+          "target": [
+            -2.5,
+            -3.0
+          ]
+        },
+        {
+          "detect": 0.025,
+          "direct_seen_at": 5.31666666666665,
+          "face": [
+            0.478544026613235,
+            0.878063559532166
+          ],
+          "fire": 0.0,
+          "hp": 100.0,
+          "id": "C",
+          "pos": [
+            10.0,
+            -2.52499866485596
+          ],
+          "role": "sentry",
+          "seen_at": 5.31666666666665,
+          "target": [
+            10.0,
+            -2.0
+          ]
+        }
+      ],
+      "has_case": false,
+      "interaction": 0.0,
+      "pending": false,
+      "player": [
+        7.31045532226563,
+        4.99999952316284
+      ],
+      "player_hp": 66.0,
+      "smokes": [],
+      "source": "Jev",
+      "stage": 0,
+      "time": 14.0000000000003
+    }
+  },
+  "naive_runs": [
+    {
+      "scenario": "rush",
+      "passes": [
+        {
+          "mode": "rules",
+          "duration": 2.6,
+          "hp": 0.0,
+          "has_case": false,
+          "success": false,
+          "detections": 2
+        },
+        {
+          "mode": "jev",
+          "duration": 2.6,
+          "hp": 0.0,
+          "has_case": false,
+          "success": false,
+          "detections": 2
+        }
+      ]
+    },
+    {
+      "scenario": "crouch",
+      "passes": [
+        {
+          "mode": "rules",
+          "duration": 2.88333333333333,
+          "hp": 0.0,
+          "has_case": false,
+          "success": false,
+          "detections": 2
+        },
+        {
+          "mode": "jev",
+          "duration": 2.88333333333333,
+          "hp": 0.0,
+          "has_case": false,
+          "success": false,
+          "detections": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "relay-jev-demo",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-19",
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "BUDGET_COORDINATOR",
+        "class_name": "DemoBudgetCoordinator"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "DemoBudgetCoordinator"
+      ]
+    }
+  ],
+  "vars": {
+    "DEMO_ENABLED": "true",
+    "DEPLOYMENT_ENV": "production"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.05
+    }
+  }
+}
